@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": "76d9",
+      "firstName": "Arm",
+      "lastName": "Muradyan",
+      "email": "muradyan.armin13@gmail.com",
+      "password": "123Arm",
+      "cPassword": "123Arm"
+    },
+    {
+      "id": "404b",
+      "firstName": "arm",
+      "lastName": "Muradyan",
+      "email": "gukasyan.spa@mail.ru",
+      "password": "oooooooo",
+      "cPassword": "oooooooo"
+    }
+  ]
+}

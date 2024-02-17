@@ -1,0 +1,10 @@
+.sidebar {
+  background-color: white;
+  border-radius: var(--card-border-radius);
+  width: 300px;
+}
+
+.sidebar h3 {
+  padding-left: 10%;
+}
+
