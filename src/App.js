@@ -1,12 +1,24 @@
 import "./App.css";
 import { useRoutes, Navigate } from "react-router-dom";
-import SignUp from "./components/Authentication/SignUp/SignUp";
-import Login from "./components/Authentication/Login/LogIn";
-import Dashboard from "./components/Dashboard/Index";
-import Main from "./components/Dashboard/Main/Main";
-import Create from "./components/Dashboard/Create/Create";
+
+import Create from "./components/Dashboard/Create";
+import PrivateRoute from "./PrivateRoute";
+import { getAccessToken } from "./utils/storage";
+import Login from "./pages/Login";
+import "assets/styles/index.css";
+import { Dashboard, Main, SignUp } from "pages";
+import { useEffect } from "react";
+import { reqGetMe } from "api/auth";
+import Edit from "components/Dashboard/Edit";
+import Delete from "components/Dashboard/Delete";
 
 function App() {
+  const isAuthenticated = !!getAccessToken();
+
+  useEffect(() => {
+    const user = reqGetMe();
+  }, []);
+
   let element = useRoutes([
     {
       path: "/",
@@ -21,8 +33,8 @@ function App() {
       element: <Login />,
     },
     {
-      path: "dashboard",
-      element: <Dashboard />,
+      path: "posts",
+      element: <PrivateRoute element={<Dashboard />} />,
       children: [
         {
           path: "",
@@ -32,6 +44,14 @@ function App() {
         {
           path: "create",
           element: <Create />,
+        },
+        {
+          path: `edit/:id`,
+          element: <Edit />,
+        },
+        {
+          path: `delete/:id`,
+          element: <Delete />,
         },
       ],
     },

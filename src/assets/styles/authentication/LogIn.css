@@ -7,10 +7,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 .fullscreen .logIn h2 {
   color: #28a4da;
+  background-color: white;
 }
 
 form {
@@ -18,24 +18,19 @@ form {
 }
 
 .fullscreen .logIn {
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   width: 500px;
   height: 500px;
   border-radius: 5%;
-  width: 781px;
-  height: 622px;
-  
-}
-.fullscreen .logIn img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+  width: 480px;
+  height: 400px;
 }
 
 .fullscreen .logIn .input {
   margin: 10px;
   padding: 20px;
   flex-direction: column;
+  background-color: white;
 }
 
 .fullscreen .logIn .input input {
@@ -75,11 +70,13 @@ input[type="password"] {
 
 .fullscreen .logIn p {
   font-weight: 500;
+  background-color: white;
 }
 
 .fullscreen .logIn p a {
   color: #009ddf;
   cursor: pointer;
+  background-color: white;
 }
 
 .email1 {
@@ -87,80 +84,26 @@ input[type="password"] {
   justify-content: start;
 }
 
-.fullscreen .logIn .input .checkbox {
-  border: 2px solid #6ad5ed;
+.invalid {
+  border-color: red;
+  background-color: rgb(255, 177, 177);
+  color: #ad1111;
+}
+
+.error {
+  color: #e20505;
+  font-family: "Roboto";
+  font-size: 13px;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.notFound {
+  color: #e20505;
+  font-family: "Roboto";
+  font-size: 12px;
+}
+
+.found {
+  visibility: hidden;
+  font-size: 0px;
+}

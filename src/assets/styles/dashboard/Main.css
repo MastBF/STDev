@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
-* {
+.over {
   background: #f6f6f6;
   font-family: "Roboto";
 }
@@ -53,3 +53,23 @@
 }
 
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin-top: 20px;
+}
+
+.pagination li {
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.pagination .active {
+  font-weight: bold;
+}
+
+.dashboard {
+  max-height: 1080px;
+}

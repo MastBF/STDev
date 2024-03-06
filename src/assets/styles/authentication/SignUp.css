@@ -7,11 +7,11 @@
   align-items: center;
 }
 .fullscreen .signUp h2 {
-    color: #28A4DA;
-    margin: 30px;
-    display: inline-block;
-    justify-content: center;
-    width: fit-content;
+  color: #28a4da;
+  margin: 30px;
+  display: inline-block;
+  justify-content: center;
+  width: fit-content;
 }
 
 form {
@@ -31,7 +31,12 @@ form {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  padding-top: 0px;
+  
+  margin-top:0px ;
 }
+
+
 .fullscreen .signUp img {
   width: 120px;
   height: 120px;
@@ -41,6 +46,7 @@ form {
 .fullscreen .signUp .input {
   margin: 10px;
   padding: 20px;
+  height: 250px;
 }
 
 .fullscreen .signUp .input input {
@@ -88,23 +94,80 @@ input[type="password"] {
 }
 
 .email1 {
-   display: flex;
-   justify-content: start;
+  display: flex;
+  justify-content:start;
 }
-
 
 .nameInvalid {
   color: red;
 }
 
- .imgWrapper {
-  
+.imgWrapper {
   display: flex;
   justify-content: center;
 }
-
 
 .fullscreen .signUp p {
   display: flex;
   justify-content: center;
 }
+
+input[type="file"] {
+  visibility: hidden;
+}
+
+.choosePic {
+  cursor: pointer;
+}
+
+.invalid {
+  border-color: red;
+  background-color: rgb(255, 224, 224);
+  color: #8a0000;
+}
+
+.errorMessage {
+  display: flex;
+  padding-right: 40px;
+  font-size: 12px;
+  margin: 0px;
+  margin-bottom: 0px;
+  text-align: left;
+  color: #d00202;
+}
+.inputs {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.email1 {
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+.setting {
+  margin-right: 360px;
+  color: #d00202;
+}
+
+.passValid {
+  visibility: hidden;
+  height: 0px;
+}
+
+.passInvalid {
+  text-align: left;
+  color: #d00202;
+  font-size: 12px;
+  height: 0px;
+ 
+}
+
+.pass {
+  height: 0px;
+}
+
+

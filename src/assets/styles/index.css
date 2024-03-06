@@ -1,0 +1,16 @@
+@import './authentication/LogIn.css';
+
+@import './authentication/SignUp.css';
+
+@import './dashboard/Main.css';
+
+@import './dashboard/Dashboard.css';
+
+@import './dashboard/Card.css';
+
+@import './dashboard/Create.css';
+
+@import './dashboard/Header.css';
+
+@import './dashboard/Delete.css';
+

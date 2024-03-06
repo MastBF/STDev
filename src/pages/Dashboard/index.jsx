@@ -1,19 +1,17 @@
 import React from "react";
-import "../Header/Header.css";
-import Main from "../Main/Main";
-import Header from "../Header/Header";
-import "./index.css";
-import Create from "../Create/Create";
+import "assets/styles/index.css";
+import Header from "../../components/Dashboard/Header";
+import "assets/styles/index.css";
 import { Outlet } from "react-router-dom";
 
 function Dashboard() {
-
+  const image = (image) => {
+    
+  };
   return (
     <div className="dashboard">
       <Header />
       <Outlet />
-      
-
     </div>
   );
 }
