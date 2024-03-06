@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+
+.create img{
+    width: 200px;
+    height: auto;
+}
+
+.create .form {
+    display: flex;
+    flex-direction:  column;
+
+}
+
+
+.create .form input  {
+    margin: 10px;
+    width: 400px;
+    height: 44px;
+    border-radius: 13px;
+    border: 1.5px solid #6ad5ed;
+    padding-left: 15px;
+    border-color: #6ad5ed;
+    font-family: 'Roboto';
+    
+}
+
+.create .form textarea {
+    margin: 10px;
+    width: 380px;
+    height: 150px;
+    border-radius: 13px;
+    border: 1.5px solid #6ad5ed;
+    padding-left: 15px;
+    border-color: #6ad5ed;
+    padding-top: 20px;
+    font-family: 'Roboto';
+    resize: none
+}
+
+
+.create .form select {
+    margin: 10px;
+    width: 400px;
+    height: 44px;
+    border-radius: 13px;
+    border: 1.5px solid #6ad5ed;
+    padding-left: 15px;
+    border-color: #6ad5ed;
+    font-family: 'Roboto';
+}
+
+
+.create .form textarea::placeholder, .create form input::placeholder {
+    color: #8B8B8B;
+
+}
+
+.create .form .invalid {
+    border-color:red;
+    background-color: rgb(255, 224, 224);
+    color: #8A0000;
+
+}
+
+
+.create button {
+    background-color: #009ddf;
+    color: white;
+    font-weight: bold;
+    width: 196px;
+    height: 39px;
+    border-radius: 13px;
+    border: 0px solid #6ad5ed;
+    padding: 12px 20px;
+    cursor: pointer;
+}
+
+.create .form p {
+    display: none;
+}
+
+.create .form .errMessage {
+    color: red;
+    display: flex;
+    padding-left: 10px;
+    font-size: 12px;
+}

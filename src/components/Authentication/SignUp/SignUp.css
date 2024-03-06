@@ -1,0 +1,110 @@
+.fullscreen {
+  background-color: #009ddf;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fullscreen .signUp h2 {
+    color: #28A4DA;
+    margin: 30px;
+    display: inline-block;
+    justify-content: center;
+    width: fit-content;
+}
+
+form {
+  padding: 20px;
+}
+
+.fullscreen .signUp {
+  background-color: rgb(255, 255, 255);
+  width: 500px;
+  height: 500px;
+  border-radius: 5%;
+  width: 781px;
+  height: 622px;
+  margin: 30px;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.fullscreen .signUp img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.fullscreen .signUp .input {
+  margin: 10px;
+  padding: 20px;
+}
+
+.fullscreen .signUp .input input {
+  margin: 10px;
+  width: 340px;
+  height: 44px;
+  border-radius: 13px;
+  border: 1.5px solid #6ad5ed;
+  padding-left: 15px;
+  border-color: #6ad5ed;
+}
+
+.fullscreen .signUp .input input:active {
+  border-color: #6ad5ed;
+}
+
+.fullscreen .signUp .upBtn input[type="submit"] {
+  background-color: #009ddf;
+  color: white;
+  font-weight: bold;
+  width: 196px;
+  height: 39px;
+  border-radius: 13px;
+  border: 0px solid #6ad5ed;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 12px 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.fullscreen .signUp p {
+  font-weight: 500;
+}
+
+.fullscreen .signUp p a {
+  color: #009ddf;
+  cursor: pointer;
+}
+
+.email1 {
+   display: flex;
+   justify-content: start;
+}
+
+
+.nameInvalid {
+  color: red;
+}
+
+ .imgWrapper {
+  
+  display: flex;
+  justify-content: center;
+}
+
+
+.fullscreen .signUp p {
+  display: flex;
+  justify-content: center;
+}

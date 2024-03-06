@@ -1,0 +1,53 @@
+.main .images img {
+  width: 200px;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.main .images {
+  display: flex;
+  justify-content: space-between;
+  max-width: 520px;
+  max-height: 207px;
+  width: 100%;
+  padding-bottom: 30px;
+ 
+}
+
+.images .card {
+  display: flex;
+  background-color: white;
+  border-radius: 12px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  box-shadow: 1px 5px 5px #9a9a9a40;
+  flex-wrap: wrap;
+}
+
+.images .card p {
+  margin-left: 20px;
+  text-align: start;
+  background-color: white;
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.images .card .comment {
+  flex-direction: column;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.images .card b {
+  background-color: white;
+}
+
+.images .card .comment p {
+  flex-direction: column;
+  background-color: white;
+  border-radius: 12px;
+  height: 100%;
+}
