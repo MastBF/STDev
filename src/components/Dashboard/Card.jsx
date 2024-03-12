@@ -5,10 +5,15 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { MdModeEdit } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import Delete from "./Delete";
+import { useDispatch, useSelector } from "react-redux";
+import { showDeleteModal, hideDeleteModal } from "store/Delete/actions";
+import { setClickedComponentId } from 'store/Delete/actions';
 
 function Card(props) {
+  const dispatch = useDispatch();
   const onDelete = () => {
-    props.setIsDelete(true);
+    dispatch(showDeleteModal());
+    dispatch(setClickedComponentId(props.id));
   };
   return (
     <div className="images">
@@ -18,12 +23,12 @@ function Card(props) {
           <p>
             <b>Name</b>
             <span className="tools">
-              <button to={`edit/${props.id}`}>
+              <Link to={`edit/${props.id}`}>
                 <MdModeEdit className="edit" />
-              </button>
-              <button onClick={onDelete}>
+              </Link>
+              <a onClick={onDelete}>
                 <RiDeleteBin6Line className="delete" />
-              </button>
+              </a>
             </span>
             <br />
             {props.name} <br />
@@ -37,6 +42,7 @@ function Card(props) {
             <br />
             {props.category}
           </p>
+          <Delete id ={props.id} setData={props.setData} updateCurrentPageOnDelete={props.updateCurrentPageOnDelete}/>
         </div>
       </div>
     </div>

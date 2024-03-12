@@ -49,10 +49,7 @@ function App() {
           path: `edit/:id`,
           element: <Edit />,
         },
-        {
-          path: `delete/:id`,
-          element: <Delete />,
-        },
+    
       ],
     },
   ]);
