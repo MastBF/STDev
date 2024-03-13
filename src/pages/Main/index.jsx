@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Card from "../../components/Dashboard/Card";
 import { Link } from "react-router-dom";
 import "assets/styles/index.css";
@@ -6,24 +6,30 @@ import ReactPaginate from "react-paginate";
 import { reqPosts } from "api/posts";
 
 function Main() {
-  const [data, setData] = useState([]);
-  const [currentPage, setCurrentPage] = useState(0);
+  const [data, setData] = useState({});
+  const [loading, setLoading] = useState(false);
+  const PAGE_COUNT = 4;
+
+  const getPosts = async (offset) => {
+    try {
+      const response = await reqPosts(PAGE_COUNT, offset);
+      setData(response.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   useEffect(() => {
-    reqPosts()
-      .then((json) => setData(json.data.results))
-      .catch((e) => console.log(e));
+    getPosts();
   }, []);
 
-
-  const handlePageClick = (data) => {
-    setCurrentPage(data.selected);
+  const handlePageClick = (event) => {
+    console.log("event", event);
+    const offset = event.selected * PAGE_COUNT;
+    getPosts(offset);
   };
-  const startIndex = currentPage * 4;
-  const endIndex = startIndex + 4;
-  const displayedData = data.slice(startIndex, endIndex);
+
   const updateCurrentPageOnDelete = () => {
-    const newPageCount = Math.ceil((data.length - 1) / 4);
-    setCurrentPage(newPageCount - 1);
+
   };
 
   return (
@@ -31,11 +37,11 @@ function Main() {
       <div className="posts">
         <h1>All Posts</h1>
         <Link to="/posts/create">
-          <button >+ New Post</button>
+          <button>+ New Post</button>
         </Link>
       </div>
       <div className="cards">
-        {displayedData.map((el) => (
+        {data?.results?.map((el) => (
           <Card
             name={el.title}
             description={el.description}
@@ -49,7 +55,7 @@ function Main() {
       </div>
       <div className="pagination">
         <ReactPaginate
-          pageCount={Math.ceil(data.length / 4)}
+          pageCount={Math.ceil(data.count / PAGE_COUNT)}
           pageRangeDisplayed={3}
           marginPagesDisplayed={2}
           previousLabel={"<"}

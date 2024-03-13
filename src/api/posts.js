@@ -1,10 +1,10 @@
 import request from "utils/request";
 
-export const reqPosts = async (num) => {
-  const count = await request(`post/crud/?limit=${4}&offset=0`).then(
-    (json) => json.data.count
-  );
-  return request(`post/crud/?limit=${count}&offset=0`);
+// export const controller = new AbortController();
+// export const signal = controller.signal;
+
+export const reqPosts = async (pageCount, offset = 0) => {
+  return request(`post/crud/?limit=${pageCount}&offset=${offset}`)
 };
 
 export const createPost = async (data) => {

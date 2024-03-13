@@ -22,7 +22,6 @@ function Delete(props) {
     dispatch(hideDeleteModal());
   };
 
-  console.log(postId);
   return (
     <div className={isDeleteModalVisible ? "deleteCard" : "notActive"}>
       <h1>Are you sure you want to delete the post?</h1>
