@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loginFailure, loginSuccess } from 'store/Auth/actions';
 import { schemaLogin } from 'components/scheme';
 import { setShowSuccess } from 'store/Success/action';
-import Input from 'pages/Input';
+import Input from 'components/Inputs/SignInput/Input';
 
 function Login() {
   const dispatch = useDispatch();

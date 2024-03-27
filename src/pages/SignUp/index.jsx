@@ -10,7 +10,7 @@ import SignUpPic from 'assets/images/signUpIMG.png';
 import Success from 'components/Dashboard/Success';
 import { useDispatch } from 'react-redux';
 import { setShowSuccess } from 'store/Success/action';
-import Input from 'pages/Input';
+import Input from 'components/Inputs/SignInput/Input';
 function SignUp() {
   const [image, setImage] = useState('');
   const [passInvalid, setPassInvalid] = useState(false);

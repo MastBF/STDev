@@ -7,7 +7,7 @@ import { createPost, editPost } from 'api/posts';
 import { reqCategory } from 'api/category';
 import { useNavigate } from 'react-router-dom';
 import { schemaCreate } from 'components/scheme';
-import Input from './Input';
+import Input from '../Inputs/CompInput/Input';
 import { useDispatch } from 'react-redux';
 import { setShowSuccess } from 'store/Success/action';
 import defaultImage from 'assets/images/CreatePost.png';
