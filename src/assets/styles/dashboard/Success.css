@@ -1,0 +1,18 @@
+.successMessage {
+  width: 200px;
+  height: 60px;
+  background-color: #4caf50;
+  color: white;
+  font-weight: 500;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 9999;
+  top: -80px;
+  left: 7%;
+  transform: translateX(-50%);
+  transition: top 0.5s ease;
+}
+
+.successMessage.show {
+  top: 20px;
+}

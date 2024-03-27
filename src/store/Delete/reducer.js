@@ -1,4 +1,8 @@
-import { SHOW_DELETE_MODAL, HIDE_DELETE_MODAL } from "./actions";
+import {
+  HIDE_DELETE_MODAL,
+  SET_CLICKED_COMPONENT_ID,
+  SHOW_DELETE_MODAL,
+} from './constants';
 
 const initialState = {
   showModal: false,
@@ -17,7 +21,7 @@ const deleteReducer = (state = initialState, action) => {
         ...state,
         showModal: false,
       };
-    case "SET_CLICKED_COMPONENT_ID":
+    case SET_CLICKED_COMPONENT_ID:
       return {
         ...state,
         clickedComponentId: action.payload,

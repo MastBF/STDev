@@ -1,19 +1,19 @@
 export const setAccessToken = (token) => {
-  localStorage.setItem("jwtAccessToken", token);
+  localStorage.setItem('jwtAccessToken', token);
 };
 
 export const getAccessToken = () => {
-  return localStorage.getItem("jwtAccessToken");
+  return localStorage.getItem('jwtAccessToken');
 };
 
 export const setRefreshToken = (token) => {
-  localStorage.setItem("jwtRefreshToken", token);
+  localStorage.setItem('jwtRefreshToken', token);
 };
 
 export const getRefreshToken = () => {
-  return localStorage.getItem("jwtRefreshToken");
+  return localStorage.getItem('jwtRefreshToken');
 };
-export const clearSotrage = () => {
-  localStorage.removeItem("jwtAccessToken");
-  localStorage.removeItem("jwtRefreshToken");
+export const clearStorage = () => {
+  localStorage.removeItem('jwtAccessToken');
+  localStorage.removeItem('jwtRefreshToken');
 };

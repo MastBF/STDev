@@ -1,5 +1,8 @@
-export const SHOW_DELETE_MODAL = "SHOW_DELETE_MODAL";
-export const HIDE_DELETE_MODAL = "HIDE_DELETE_MODAL";
+import {
+  HIDE_DELETE_MODAL,
+  SET_CLICKED_COMPONENT_ID,
+  SHOW_DELETE_MODAL,
+} from './constants';
 
 export const showDeleteModal = () => ({
   type: SHOW_DELETE_MODAL,
@@ -10,6 +13,6 @@ export const hideDeleteModal = () => ({
 });
 
 export const setClickedComponentId = (id) => ({
-  type: 'SET_CLICKED_COMPONENT_ID',
+  type: SET_CLICKED_COMPONENT_ID,
   payload: id,
 });

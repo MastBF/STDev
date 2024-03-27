@@ -1,32 +1,30 @@
-import request from "utils/request";
+import request from 'utils/request';
+import { postCreate, postManipulate, posts } from './constants';
 
-// export const controller = new AbortController();
-// export const signal = controller.signal;
-
-export const reqPosts = async (pageCount, offset = 0) => {
-  return request(`post/crud/?limit=${pageCount}&offset=${offset}`)
+export const reqPosts = async (pageCount, offset = 0, signal) => {
+  return request(posts(pageCount, offset), { signal });
 };
 
 export const createPost = async (data) => {
-  return request.post("/post/crud/", data, {
+  return request.post(postCreate, data, {
     headers: {
-      "Content-Type": "multipart/form-data",
+      'Content-Type': 'multipart/form-data',
     },
   });
 };
 
 export const deletePost = async (id) => {
-  return request.delete(`/post/crud/${id}/`);
+  return request.delete(postManipulate(id));
 };
 
 export const editPost = async (data, id) => {
-  return request.put(`/post/crud/${id}/`, data, {
+  return request.put(postManipulate(id), data, {
     headers: {
-      "Content-Type": "multipart/form-data",
+      'Content-Type': 'multipart/form-data',
     },
   });
 };
 
 export const idPost = async (id) => {
-  return request(`/post/crud/${id}/`);
+  return request(postManipulate(id));
 };

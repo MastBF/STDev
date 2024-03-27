@@ -1,31 +1,40 @@
-import React, { useEffect, useState } from "react";
-import "assets/styles/index.css";
-import { Link } from "react-router-dom";
-import { clearSotrage } from "../../utils/storage";
-import { reqUser } from "api/user";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from 'react';
+import 'assets/styles/index.css';
+import { Link } from 'react-router-dom';
+import { clearStorage } from '../../utils/storage';
+import { reqUser } from 'api/user';
+import { useSelector } from 'react-redux';
+import Success from './Success';
 
-function Header(props) {
-  const [user, setUser] = useState("");
-  const [image, setImage] = useState("");
+function Header() {
+  const [user, setUser] = useState('');
+  const [image, setImage] = useState('');
   const isDeleteModalVisible = useSelector((state) => state.delete.showModal);
 
   const handleLogOut = () => {
-    clearSotrage();
+    clearStorage();
   };
   useEffect(() => {
-    reqUser()
-      .then((json) => {
+    const fetchUser = async () => {
+      try {
+        const json = await reqUser();
         setUser(json.data.first_name);
         setImage(json.data.image);
-      })
-      .catch((e) => console.log(e));
+      } catch (error) {
+        console.error('Err:', error);
+      }
+    };
+
+    fetchUser();
   }, []);
+
   return (
     <header>
-      <div className={isDeleteModalVisible ? "blackout" : ""}></div>
+      <Success />
+
+      <div className={isDeleteModalVisible ? 'blackout' : ''}></div>
       <div className="container header-container">
-        <Link className="link" to={"/posts"}>
+        <Link className="link" to={'/posts?page=1'}>
           Posts
         </Link>
         <div className="pic">
