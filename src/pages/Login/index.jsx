@@ -1,82 +1,82 @@
-import { Link } from "react-router-dom";
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { getAccessToken, setAccessToken, setRefreshToken } from "utils/storage";
-import { reqSignIn } from "api/auth";
-import "assets/styles/index.css";
-import { useForm } from "react-hook-form";
-import * as yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useDispatch, useSelector } from "react-redux";
-import { loginFailure, loginSuccess } from "store/Auth/actions";
-
-const schema = yup.object().shape({
-  email: yup.string().email().required(),
-  password: yup.string().required().min(6),
-});
+import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { setAccessToken, setRefreshToken } from 'utils/storage';
+import { reqSignIn } from 'api/auth';
+import 'assets/styles/index.css';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useDispatch, useSelector } from 'react-redux';
+import { loginFailure, loginSuccess } from 'store/Auth/actions';
+import { schemaLogin } from 'components/scheme';
+import { setShowSuccess } from 'store/Success/action';
+import Input from 'pages/Input';
 
 function Login() {
   const dispatch = useDispatch();
   const registrationState = useSelector((state) => state.registration);
   const navigate = useNavigate();
-  const [isValid, setIsValid] = useState(true);
+  const [isInvalid, setIsInvalid] = useState(false);
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm({
-    mode: "onSubmit",
-    resolver: yupResolver(schema),
+    mode: 'onSubmit',
+    resolver: yupResolver(schemaLogin),
   });
   const onSubmit = async (data) => {
     try {
       const formData = new FormData();
-      formData.append("email", data.email);
-      formData.append("password", data.password);
+      formData.append('email', data.email);
+      formData.append('password', data.password);
       const response = await reqSignIn(formData);
       if (response.status === 200) {
         const responseData = response.data;
+        setIsInvalid(false);
         setAccessToken(responseData.token.access);
         setRefreshToken(responseData.token.refresh);
-        navigate("/posts");
+        navigate('/posts');
         dispatch(loginSuccess(response));
+        setTimeout(() => {
+          dispatch(setShowSuccess(true));
+        }, 400);
+        setTimeout(() => {
+          dispatch(setShowSuccess(false));
+        }, 1800);
         setAccessToken(registrationState.user.data.access);
         setRefreshToken(registrationState.user.data.refresh);
       }
     } catch (er) {
-      console.error("Error:", er);
+      console.error('Error:', er);
+      setIsInvalid(true);
       dispatch(loginFailure(er));
     }
   };
-  // console.log('response:',registrationState.user || registrationState.error);
   return (
     <div className="fullscreen">
       <div className="logIn">
         <h2>Sign In</h2>
 
         <form className="input" onSubmit={handleSubmit(onSubmit)}>
-          <input
+          <Input
             type="email"
             placeholder="Email"
-            {...register("email", { required: "This filed is required" })}
-            className={`${!errors?.email?.message ? "" : "invalid"}`}
+            name="email"
+            register={register}
+            errors={errors}
           />
-         
-            {errors?.email && <p>{errors?.email?.message || "Error"}</p>}{" "}
-          <input
+          <Input
             type="password"
             placeholder="Password"
-            {...register("password", { required: "This filed is required" })}
-            className={`${!errors?.password?.message ? "" : "invalid"}`}
+            name="password"
+            register={register}
+            errors={errors}
           />
-            {" "}
-            {errors?.password && (
-              <p>{errors?.password?.message || "Error"}</p>
-            )}{" "}
-
+          {isInvalid && <p className="invalid">Email or Password not valid</p>}
           <div className="upBtn">
-            {" "}
-            <input type="submit" value="Sign In" />{" "}
+            {' '}
+            <input type="submit" value="Sign In" />{' '}
           </div>
         </form>
 

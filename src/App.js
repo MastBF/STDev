@@ -1,55 +1,43 @@
-import "./App.css";
-import { useRoutes, Navigate } from "react-router-dom";
-
-import Create from "./components/Dashboard/Create";
-import PrivateRoute from "./PrivateRoute";
-import { getAccessToken } from "./utils/storage";
-import Login from "./pages/Login";
-import "assets/styles/index.css";
-import { Dashboard, Main, SignUp } from "pages";
-import { useEffect } from "react";
-import { reqGetMe } from "api/auth";
-import Edit from "components/Dashboard/Edit";
-import Delete from "components/Dashboard/Delete";
+import './App.css';
+import { useRoutes, Navigate } from 'react-router-dom';
+import Create from './components/Dashboard/Create';
+import PrivateRoute from './PrivateRoute';
+import Login from './pages/Login';
+import 'assets/styles/index.css';
+import { Dashboard, Main, SignUp } from 'pages';
+import Edit from 'components/Dashboard/Edit';
 
 function App() {
-  const isAuthenticated = !!getAccessToken();
-
-  useEffect(() => {
-    const user = reqGetMe();
-  }, []);
-
-  let element = useRoutes([
+  const element = useRoutes([
     {
-      path: "/",
+      path: '/',
       element: <Navigate to="signUp" />,
     },
     {
-      path: "signUp",
+      path: 'signUp',
       element: <SignUp />,
     },
     {
-      path: "logIn",
+      path: 'logIn',
       element: <Login />,
     },
     {
-      path: "posts",
+      path: 'posts',
       element: <PrivateRoute element={<Dashboard />} />,
       children: [
         {
-          path: "",
+          path: '',
           element: <Main />,
         },
 
         {
-          path: "create",
+          path: 'create',
           element: <Create />,
         },
         {
           path: `edit/:id`,
           element: <Edit />,
         },
-    
       ],
     },
   ]);

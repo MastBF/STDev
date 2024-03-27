@@ -68,3 +68,16 @@
   margin-left: 5px;
   cursor: pointer;
 }
+.cardInfo div {
+  display: block;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.images b {
+  margin-bottom: 5px;
+  margin-top: 2px;
+}

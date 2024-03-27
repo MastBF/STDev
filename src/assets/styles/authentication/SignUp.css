@@ -32,10 +32,9 @@ form {
   flex-direction: column;
   align-items: center;
   padding-top: 0px;
-  
-  margin-top:0px ;
-}
 
+  margin-top: 0px;
+}
 
 .fullscreen .signUp img {
   width: 120px;
@@ -63,7 +62,7 @@ form {
   border-color: #6ad5ed;
 }
 
-.fullscreen .signUp .upBtn input[type="submit"] {
+.fullscreen .signUp .upBtn input[type='submit'] {
   background-color: #009ddf;
   color: white;
   font-weight: bold;
@@ -75,9 +74,9 @@ form {
   cursor: pointer;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+input[type='text'],
+input[type='email'],
+input[type='password'] {
   padding: 12px 20px;
   margin: 10px 0;
   box-sizing: border-box;
@@ -95,7 +94,7 @@ input[type="password"] {
 
 .email1 {
   display: flex;
-  justify-content:start;
+  justify-content: flex-start;
 }
 
 .nameInvalid {
@@ -112,8 +111,8 @@ input[type="password"] {
   justify-content: center;
 }
 
-input[type="file"] {
-  visibility: hidden;
+input[type='file'] {
+  display: none;
 }
 
 .choosePic {
@@ -140,13 +139,10 @@ input[type="file"] {
   flex-direction: row;
 }
 
-
 .email1 {
   display: flex;
   flex-direction: row;
 }
-
-
 
 .setting {
   margin-right: 360px;
@@ -163,11 +159,12 @@ input[type="file"] {
   color: #d00202;
   font-size: 12px;
   height: 0px;
- 
 }
 
 .pass {
   height: 0px;
 }
 
-
+.error {
+  margin: 0px;
+}

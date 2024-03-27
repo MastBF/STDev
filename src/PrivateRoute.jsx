@@ -1,16 +1,15 @@
-import React from 'react'
-import { Navigate, useNavigate } from 'react-router-dom'
-import { getAccessToken } from './utils/storage'; 
-
+import React from 'react';
+import { Navigate } from 'react-router-dom';
+import { getAccessToken } from './utils/storage';
 
 const PrivateRoute = ({ element }) => {
-    const isAuthenticated = !!getAccessToken()
-  
-    if (!isAuthenticated) {
-      return <Navigate to="/logIn" />;
-    }
-  
-    return element;
-  };
+  const isAuthenticated = !!getAccessToken();
 
-export default PrivateRoute
+  if (!isAuthenticated) {
+    return <Navigate to="/logIn" />;
+  }
+
+  return element;
+};
+
+export default PrivateRoute;

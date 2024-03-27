@@ -17,7 +17,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Roboto";
+  font-family: 'Roboto';
 }
 
 .deleteCard .Delete {
@@ -30,7 +30,7 @@
   width: 183px;
   height: 39px;
   color: rgb(255, 255, 255);
-  font-family: "Roboto";
+  font-family: 'Roboto';
   margin-top: 50px;
   font-weight: 600;
   cursor: pointer;
@@ -46,21 +46,20 @@
   width: 183px;
   height: 39px;
   color: rgb(0, 0, 0);
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-weight: 600;
-  margin-top:10px;
-  cursor: pointer
+  margin-top: 10px;
+  cursor: pointer;
 }
 
-
 .activeDelete {
-    position: absolute;
-    background-color: rgb(64, 64, 64);
-    width: 100vw;
-    height: 100vh;
-    z-index: 9998;
-    overflow: 0.5;
-    padding-left: 0px;
+  position: absolute;
+  background-color: rgb(64, 64, 64);
+  width: 100vw;
+  height: 100vh;
+  z-index: 9998;
+  overflow: 0.5;
+  padding-left: 0px;
 }
 
 .blackout {

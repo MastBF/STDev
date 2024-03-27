@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .fullscreen {
   background-color: #009ddf;
@@ -47,7 +47,7 @@ form {
   border-color: #6ad5ed;
 }
 
-.fullscreen .logIn .upBtn input[type="submit"] {
+.fullscreen .logIn .upBtn input[type='submit'] {
   background-color: #009ddf;
   color: white;
   font-weight: bold;
@@ -59,9 +59,9 @@ form {
   cursor: pointer;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"] {
+input[type='text'],
+input[type='email'],
+input[type='password'] {
   padding: 12px 20px;
   margin: 10px 0;
   box-sizing: border-box;
@@ -81,25 +81,25 @@ input[type="password"] {
 
 .email1 {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
 }
 
 .invalid {
   border-color: red;
   background-color: rgb(255, 177, 177);
   color: #ad1111;
+  margin: 0;
 }
 
 .error {
   color: #e20505;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-size: 13px;
 }
 
-
 .notFound {
   color: #e20505;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-size: 12px;
 }
 
